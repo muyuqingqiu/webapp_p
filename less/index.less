@@ -1,1 +1,768 @@
 @charset "utf-8";
+/*通配*/
+*{ 
+  padding: 0; 
+  margin: 0;
+}
+body{
+    font-size: 16px;
+    background: #F0F0F0;
+    font-family: "Helvetica";
+}
+li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    border: none;
+}
+a{
+    text-decoration: none;
+}
+h2,h3{
+    font-weight: normal;
+}
+.clear{
+    &:after{
+       content: "";
+       display: block;
+       clear: both; 
+    }
+    zoom: 1;
+}
+
+
+/*less变量*/
+@width : 100%;
+@bg: #43c475;
+.pr{
+    position: relative;
+}
+.pa{
+    position:absolute;
+}
+.pf{
+    position: fixed;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.of{
+    overflow: hidden;
+}
+.br(@deg:5px){
+    border-radius: @deg;
+    -webkit-border-radius: @deg;
+    -moz-border-radius: @deg;
+}
+
+/*整体内容*/
+#main{
+    width:@width;
+    .of;
+    .pr;
+}
+
+//header
+#header{
+    @hh: 0.9rem;
+    @wl: 1.8rem;
+    @fz: 0.3rem;
+    @col: white;
+    
+    width: @width;
+    height: @hh;
+    background: @col;
+    z-index: 100;
+    
+    .leftSide{
+        width: @wl;
+        height: @hh;
+        .fl;
+        .pr;
+        
+        .logo{
+            @lw: 0.5rem;
+            @lt: 0.2rem;
+            width: @lw;
+            height: @lw;
+            .pa;
+            left: @lt;
+            top: @lt;
+            
+            img{
+                width: @width;
+                height: @width;
+            }
+        }
+        .place{
+            width: 1rem;
+            height: @width;
+            .pa;
+            right: 0;
+            top: 0;
+                
+            a{
+                width: @width;
+                height: @width;
+                display: block;
+                
+                line-height: @hh;
+                font-size: @fz;
+                color: @bg;
+               
+               span{
+                   width: 0;
+                   height: 0;
+                   border: 0.05rem solid transparent;
+                   border-top: 0.05rem solid @bg;
+                   .pa;
+                   right: 0.2rem;
+                   top: 0.4rem;
+               } 
+            }  
+        }
+    }
+    .center{
+        width: 2.84rem;
+        height: @hh;
+        .fl;
+        .pr;
+        
+        input{
+            width: @width;
+            height: 0.6rem;
+            background: #EEEEEE;
+            border: none;
+            text-indent: 0.56rem;
+            font-size: @fz;
+            color: #bbbbbb;
+            .pa;
+            left: 0;
+            top: 0.14rem;
+            .br();
+        }
+        span:nth-of-type(1){
+            width: 0.3rem;
+            height: 0.3rem;
+            background: url(../img/png/search_icon.png) no-repeat;
+            background-size: @width @width;
+            .pa;
+            left: 0.2rem;
+            top: 0.32rem;
+        }
+        span:nth-of-type(2){
+            width: 0.3rem;
+            height: 0.3rem;
+            background: url(../img/png/scan_qr.png) no-repeat;
+            background-size: @width @width;
+            .pa;
+            right: 0.2rem;
+            top: 0.32rem;
+        }
+    }
+    .rightSide{
+        width:1.70rem;
+        height: @hh;
+        .fr;
+        .pr;
+        
+        .phone{
+           width: 0.38rem;
+           height: 0.38rem;
+           .pa;
+           left: 0.3rem;
+           top: 0.26rem; 
+           background: url(../img/png/mainpage_call_normal.png);
+           background-size: @width @width;
+        }
+        .login{
+           width: 0.38rem;
+           height: 0.38rem;
+           .pa;
+           right: 0.32rem;
+           top: 0.26rem; 
+           background: url(../img/png/icon_niuxin.png);
+           background-size: @width @width;
+           
+           a{
+               width: @width;
+               height: @width;
+               display: block;
+           }
+        }
+    }
+}
+
+/*轮播图*/
+#turn{
+    width: @width;
+    height: 1.8rem;
+    background: #FFFFFF;
+    .pr;
+    .of;
+}
+/*大图轮播*/
+#bigPic{
+    width: @width*4;
+    height: @width;
+    .pa;
+    left: 0;
+    top: 0;
+    li{
+        width:@width/4;
+        height: @width;
+        .fl;
+        
+        img{
+            width: @width;
+            height: @width;
+        }
+    }    
+}
+/*小列表*/
+#small{
+    width:0.88rem;
+    height: 0.12rem;
+    .pa;
+    bottom: 0.14rem;
+    left: @width/2;
+    margin-left: -0.32rem;
+    li{
+        width: 0.12rem;
+        height: @width;
+        background: white;
+        .fl;
+        .br(0.06rem);
+        margin-right: 0.1rem;
+        &.change{
+            background: @bg;
+        }
+    }
+}
+/*旅行  大导航*/
+#plan{
+    width:@width;
+    height: 1.06rem;
+    background: #FFFFFF;
+    .pr;
+}
+#pList{
+    width: 6.2rem;
+    height: @width;
+    margin-left: 0.1rem;
+    
+    li{
+        .fl;
+        width: @width/3;
+        height: 0.86rem;
+        .pr;
+        top: 0.2rem;
+        left: 0;
+        
+        a{
+            width: 1.86rem;
+            height: @width;
+            display: block;
+            .pr;
+            left: 0.1rem;
+            
+            img{
+                width: @width;
+                height: @width;
+            }
+        }
+    }
+}
+/*旅行  小导航*/
+#nav{
+    width: @width;
+    height: 3.08rem;
+    background: #FFFFFF;
+    .pr
+}
+#nList{
+    width: @width;
+    height: @width;
+    
+    li{
+        width: @width/5;
+        height: @width/2;
+        .fl;
+        .pr;
+        .of;
+        a{
+            display: block;
+            width: @width;
+            height: 1.24rem;
+            margin-top: 0.2rem;
+            .pr;
+            .of;
+            
+            span.icon{
+               display: block;
+               width:0.8rem;
+               height: 0.8rem; 
+               margin:0 0.24rem;
+               img{
+                   width: @width;
+                   height: @width;
+               }
+            }
+            span.text{
+                display: block;
+                width: 0.8rem;
+                height: 0.28rem;
+                line-height: 0.28rem;
+                margin-top: 0.16rem ;
+                margin-left: 0.24rem;
+                font-size: 0.24rem;
+                color: #222222;
+                text-align: center;
+            }
+        }
+    }
+}
+/*广播*/
+#notice{
+    width: @width;
+    height: 0.8rem;
+    border-top: 1px solid #dddddd;
+    background: #FFFFFF;
+    .pr;
+    .of;
+}
+#noticeL{
+    width: 4.24rem;
+    height: 0.42rem;
+    .fl;
+    .pr;
+    .of;
+    margin-top: 0.18rem;
+    border-right:1px solid #DDDDDD ;
+}
+#tList{
+    width: 3.88rem;
+    .pa;
+    left: 0.3rem;
+    top: 0;
+    
+    li{
+        width: @width;
+        height: 0.42rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;       
+    
+        a{
+            width: @width;
+            height: @width; 
+            line-height: 0.42rem;  
+            margin-right: 0.12rem; 
+            margin-bottom: 0.1rem ;
+            font-size: 0.28rem;
+            color: #666666;
+                  
+            img{
+                width: 0.4rem;
+                height: 0.4rem;
+                margin-right: 0.1rem;
+            }
+        }
+    }
+}
+#noticeR{
+    width: 1.6rem;
+    height: 0.6rem;
+    .fr;
+    margin-top: 0.1rem;
+    margin-right: 0.2rem;
+    a{
+        width: @width;
+        height: @width;
+        display: block;
+        
+        img{
+            width: @width;
+            height: @width;
+        }
+    }
+}
+
+/*出境服务*/
+#service{
+    width: @width;
+    height: 1.48rem;
+    background: #f0f0f0;
+    .of;
+}
+#sList{
+    width: 6.1rem;
+    height: 1.08rem;
+    margin-top: 0.2rem;
+    margin-left: 0.3rem;
+    .of;
+    
+    li{
+        width: 1rem;
+        height: @width;
+        background: #FFFFFF;
+        margin-right: 0.2rem;
+        .br(0.1rem);
+        .fl;
+        .of;
+        
+        a{
+            width: @width;
+            height: @width;
+            display: block;
+            text-align: center;
+            font-size: 0.2rem;
+            color: #222222;
+            .of;
+            
+            span{
+                width: 0.4rem;
+                height: 0.4rem;
+                margin-top: 0.2rem;
+                margin-left: 0.3rem;
+                display: block;
+                
+                img{
+                    width: @width;
+                    height: @width;
+                }
+            }
+            h3{
+                width: @width;
+                height: 0.36rem;
+                line-height: 0.36rem;
+                margin-top: 0.04rem;
+            }
+        } 
+    }
+}
+
+/*注册有礼*/
+#gift{
+    width: @width;
+    height: 2.06rem;
+    margin-bottom: 0.2rem;
+    
+    img{
+        width: @width;
+        height: @width;
+    }
+}
+/*热门推荐*/
+#hot{
+    width: @width;
+    height: 5.08rem;
+    margin-bottom: 0.2rem;
+    .of;
+    
+    .title{
+        width: @width;
+        height: 0.88rem;
+        background: #FFFFFF;
+        line-height: 0.88rem;
+        text-indent: 0.3rem;
+        font-size: 0.32rem;
+        color: black;
+    }
+}
+#wList{
+    width: @width;
+    li{
+        width: 1.58rem;
+        height: 2.08rem;
+        border-top: 0.02rem solid #F0F0F0;
+        border-left: 0.02rem solid #F0F0F0;
+        .fl;
+        
+        a{
+            width: @width;
+            height: @width;
+            display: block;
+            
+            img{
+                width: @width;
+                height: @width;
+            }
+        }
+    }
+}
+
+/*发现精彩*/
+#discover{
+    width: @width;
+    height: 3.14rem;
+    background: white;
+    .of;
+    
+    .title{
+        width: @width;
+        height: 0.9rem;
+        border-bottom: 0.02rem solid #F0F0F0;
+        .pr;
+        
+        .leftS{
+            width: 1.92rem;
+            height: @width;
+            line-height: 0.9rem;
+            text-align: center;
+            .pa;
+            left: 0;
+            top: 0;
+            font-size: 0.32rem;
+            color: #000000;
+        }
+        .centerS{
+            width: 2.48rem;
+            height: 0.52rem;
+            .pa;
+            .of;
+            left: 1.92rem;
+            top: 0.19rem;
+            
+            .gun{
+                width: @width;
+                
+                li{
+                    width: @width;
+                    height: 0.52rem;
+                    a{
+                        width: @width;
+                        height: @width;
+                        display: block;
+                        .pr;
+                    }
+                    span.up{
+                        width: 0.3rem;
+                        height: 0.24rem;
+                        display: inline-block ;
+                        background: url(../img/png/double_quotation_left.png) no-repeat;
+                        background-size: @width @width;
+                        .pa;
+                        left: 0.1rem;
+                        top: 0.14rem;
+                    }
+                    span.text{
+                        width: 1.7rem;
+                        height: 0.52rem;
+                        line-height: 0.52rem;
+                        display: inline-block;
+                        font-size: 0.24rem;
+                        color: #999999;
+                        .pa;
+                        left: 0.5rem;
+                        top: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    span.down{
+                        width: 0.3rem;
+                        height: 0.24rem;
+                        display: inline-block;
+                        background: url(../img/png/double_quotation_mark_right.png) no-repeat;
+                        background-size: @width @width;
+                        .pa;
+                        right: 0.1rem;
+                        top: 0.14rem;
+                    }
+                }
+            }
+            
+        }
+        .rightS{
+            width: 1.6rem;
+            height: @width;
+            .pa;
+            right: 0.3rem;
+            top: 0;
+            .of;
+            a{
+                width: @width;
+                height: 0.6rem;
+                margin-top: 0.16rem;
+                display: block;
+                background: url(../img/png/login.png) no-repeat;
+                background-size:@width @width;
+            }
+        }
+    }
+    .community{
+        width: @width;
+        height: 2.24rem;
+        .pr;
+        .of;
+        
+        .cList{
+            width: 6rem;
+            height: 1.84rem;
+            .pa;
+            left: 50%;
+            margin-left: -3rem;
+            top: 50%;
+            margin-top: -0.92rem;
+            
+            li{
+                width: @width/4;
+                height: @width;
+                .fl;
+                
+                a{
+                    width: 1.4rem;
+                    height: @width;
+                    display: block;
+                    margin: 0 0.1rem;
+                    font-size: 0.28rem;
+                    color: black;
+                    .pr;
+                    
+                    img{
+                       width: @width;
+                       height: @width; 
+                    }
+                    h3{
+                        width: @width;
+                        height: 0.48rem;
+                        line-height: 0.48rem;
+                        .pa;
+                        left: 0;
+                        bottom: 0.14rem;
+                        text-align: center;
+                        color: black;
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+}
+/*发现更多精彩*/
+#more{
+    width: @width;
+    height: 1rem;
+    .pr;
+    .of;
+    
+    .line{
+        height: 0.02rem;
+        .pa;
+        left: 50%;
+        top: 50%;
+        margin-left: -2.2rem;
+        background: #dcdcdc;
+        width: 4.4rem;
+    }
+    p{
+        width: 2.28rem;
+        height: 0.36rem;
+        background: #f0f0f0;
+        line-height: 0.36rem;
+        .pa;
+        left: 50%;
+        margin-left: -1.14rem;
+        top: 50%;
+        margin-top: -0.18rem;
+        a{
+            width: @width;
+            height: @width;
+            display: block;
+            font-size: 0.24rem;
+            line-height: 0.36rem;
+            color: #999999;
+            text-indent: 0.64rem;
+            .pr;
+        
+            span{
+                width: 0.36rem;
+                height: 0.36rem;
+                display: inline-block;
+                background: url(../img/png/more1.png) no-repeat ;
+                background-size: @width @width;
+                .pa;
+                left: 0.2rem;
+                top: 0;
+            }
+        }
+    }
+}
+/*景点*/
+#scenic{
+    width: @width;
+    height: 2.36rem;  
+}
+#aList{
+    width: @width;
+    height: 0.9rem;
+    background: #FFFFFF;
+    .of;
+    
+    li{
+        width:@width/4;
+        height: 0.84rem;
+        line-height: 0.9rem;
+        text-align: center;
+        a{
+            width: @width;
+            height: @width;
+            display: block;
+            font-size: 0.32rem;
+            color: black;
+        }
+        .fl;
+        &.moveOn{
+            a{
+                color:@bg;
+                border-bottom: 0.06rem solid @bg;
+            }
+        }
+    } 
+}
+#bList{
+    width: @width;
+    height: 1.46rem;
+    .of;
+    
+    li{
+        width:1.58rem;
+        height: 0.72rem;
+        text-align: center;
+        border-top: 0.02rem solid #dddddd;
+        border-right: 0.02rem solid #dddddd;
+        .of;
+        
+        a{
+            width: 1.24rem;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            display: block;
+            font-size: 0.24rem;
+            color: #666666;
+            margin: 0.11rem 0.17rem;
+        }
+        .fl;
+        &.moveOff{
+            a{
+                color: white;
+                background: @bg;
+                .br(0.24rem);
+            }
+        }
+    } 
+}
+
+
+
+
+
+
+
+
