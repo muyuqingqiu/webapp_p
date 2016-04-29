@@ -12,4 +12,5 @@
 		$arr[] = $row;
 	}
 	echo json_encode($arr);
+
 ?>

@@ -1,1 +1,814 @@
 @charset "utf-8";
+/*通配*/
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 16px;
+  background: #F0F0F0;
+  font-family: "Helvetica";
+}
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+h2,
+h3 {
+  font-weight: normal;
+}
+.clear {
+  zoom: 1;
+}
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/*less变量*/
+.pr {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+.pf {
+  position: fixed;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.of {
+  overflow: hidden;
+}
+/*整体内容*/
+#main {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#header {
+  width: 100%;
+  height: 0.9rem;
+  background: #ffffff;
+  z-index: 100;
+}
+#header .leftSide {
+  width: 1.8rem;
+  height: 0.9rem;
+  float: left;
+  position: relative;
+}
+#header .leftSide .logo {
+  width: 0.5rem;
+  height: 0.5rem;
+  position: absolute;
+  left: 0.2rem;
+  top: 0.2rem;
+}
+#header .leftSide .logo img {
+  width: 100%;
+  height: 100%;
+}
+#header .leftSide .place {
+  width: 1rem;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#header .leftSide .place a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  line-height: 0.9rem;
+  font-size: 0.3rem;
+  color: #43c475;
+}
+#header .leftSide .place a span {
+  width: 0;
+  height: 0;
+  border: 0.05rem solid transparent;
+  border-top: 0.05rem solid #43c475;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.4rem;
+}
+#header .center {
+  width: 2.84rem;
+  height: 0.9rem;
+  float: left;
+  position: relative;
+}
+#header .center input {
+  width: 100%;
+  height: 0.6rem;
+  background: #EEEEEE;
+  border: none;
+  text-indent: 0.56rem;
+  font-size: 0.3rem;
+  color: #bbbbbb;
+  position: absolute;
+  left: 0;
+  top: 0.14rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#header .center span:nth-of-type(1) {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: url(../img/png/search_icon.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0.2rem;
+  top: 0.32rem;
+}
+#header .center span:nth-of-type(2) {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: url(../img/png/scan_qr.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.32rem;
+}
+#header .rightSide {
+  width: 1.70rem;
+  height: 0.9rem;
+  float: right;
+  position: relative;
+}
+#header .rightSide .phone {
+  width: 0.38rem;
+  height: 0.38rem;
+  position: absolute;
+  left: 0.3rem;
+  top: 0.26rem;
+  background: url(../img/png/mainpage_call_normal.png);
+  background-size: 100% 100%;
+}
+#header .rightSide .login {
+  width: 0.38rem;
+  height: 0.38rem;
+  position: absolute;
+  right: 0.32rem;
+  top: 0.26rem;
+  background: url(../img/png/icon_niuxin.png);
+  background-size: 100% 100%;
+}
+#header .rightSide .login a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/*轮播图*/
+#turn {
+  width: 100%;
+  height: 1.8rem;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+/*大图轮播*/
+#bigPic {
+  width: 400%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#bigPic li {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+#bigPic li img {
+  width: 100%;
+  height: 100%;
+}
+/*小列表*/
+#small {
+  width: 0.88rem;
+  height: 0.12rem;
+  position: absolute;
+  bottom: 0.14rem;
+  left: 50%;
+  margin-left: -0.32rem;
+}
+#small li {
+  width: 0.12rem;
+  height: 100%;
+  background: white;
+  float: left;
+  border-radius: 0.06rem;
+  -webkit-border-radius: 0.06rem;
+  -moz-border-radius: 0.06rem;
+  margin-right: 0.1rem;
+}
+#small li.change {
+  background: #43c475;
+}
+/*旅行  大导航*/
+#plan {
+  width: 100%;
+  height: 1.06rem;
+  background: #FFFFFF;
+  position: relative;
+}
+#pList {
+  width: 6.2rem;
+  height: 100%;
+  margin-left: 0.1rem;
+}
+#pList li {
+  float: left;
+  width: 33.33333333%;
+  height: 0.86rem;
+  position: relative;
+  top: 0.2rem;
+  left: 0;
+}
+#pList li a {
+  width: 1.86rem;
+  height: 100%;
+  display: block;
+  position: relative;
+  left: 0.1rem;
+}
+#pList li a img {
+  width: 100%;
+  height: 100%;
+}
+/*旅行  小导航*/
+#nav {
+  width: 100%;
+  height: 3.08rem;
+  background: #FFFFFF;
+  position: relative;
+}
+#nList {
+  width: 100%;
+  height: 100%;
+}
+#nList li {
+  width: 20%;
+  height: 50%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+#nList li a {
+  display: block;
+  width: 100%;
+  height: 1.24rem;
+  margin-top: 0.2rem;
+  position: relative;
+  overflow: hidden;
+}
+#nList li a span.icon {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0 0.24rem;
+}
+#nList li a span.icon img {
+  width: 100%;
+  height: 100%;
+}
+#nList li a span.text {
+  display: block;
+  width: 0.8rem;
+  height: 0.28rem;
+  line-height: 0.28rem;
+  margin-top: 0.16rem ;
+  margin-left: 0.24rem;
+  font-size: 0.24rem;
+  color: #222222;
+  text-align: center;
+}
+/*广播*/
+#notice {
+  width: 100%;
+  height: 0.8rem;
+  border-top: 1px solid #dddddd;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+#noticeL {
+  width: 4.24rem;
+  height: 0.42rem;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.18rem;
+  border-right: 1px solid #DDDDDD ;
+}
+#tList {
+  width: 3.88rem;
+  position: absolute;
+  left: 0.3rem;
+  top: 0;
+}
+#tList li {
+  width: 100%;
+  height: 0.42rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#tList li a {
+  width: 100%;
+  height: 100%;
+  line-height: 0.42rem;
+  margin-right: 0.12rem;
+  margin-bottom: 0.1rem ;
+  font-size: 0.28rem;
+  color: #666666;
+}
+#tList li a img {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.1rem;
+}
+#noticeR {
+  width: 1.6rem;
+  height: 0.6rem;
+  float: right;
+  margin-top: 0.1rem;
+  margin-right: 0.2rem;
+}
+#noticeR a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#noticeR a img {
+  width: 100%;
+  height: 100%;
+}
+/*出境服务*/
+#service {
+  width: 100%;
+  height: 1.48rem;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+#sList {
+  width: 6.1rem;
+  height: 1.08rem;
+  margin-top: 0.2rem;
+  margin-left: 0.3rem;
+  overflow: hidden;
+}
+#sList li {
+  width: 1rem;
+  height: 100%;
+  background: #FFFFFF;
+  margin-right: 0.2rem;
+  border-radius: 0.1rem;
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  float: left;
+  overflow: hidden;
+}
+#sList li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: center;
+  font-size: 0.2rem;
+  color: #222222;
+  overflow: hidden;
+}
+#sList li a span {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-top: 0.2rem;
+  margin-left: 0.3rem;
+  display: block;
+}
+#sList li a span img {
+  width: 100%;
+  height: 100%;
+}
+#sList li a h3 {
+  width: 100%;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  margin-top: 0.04rem;
+}
+/*注册有礼*/
+#gift {
+  width: 100%;
+  height: 2.06rem;
+  margin-bottom: 0.2rem;
+}
+#gift img {
+  width: 100%;
+  height: 100%;
+}
+/*热门推荐*/
+#hot {
+  width: 100%;
+  height: 5.08rem;
+  margin-bottom: 0.2rem;
+  overflow: hidden;
+}
+#hot .title {
+  width: 100%;
+  height: 0.88rem;
+  background: #FFFFFF;
+  line-height: 0.88rem;
+  text-indent: 0.3rem;
+  font-size: 0.32rem;
+  color: black;
+}
+#wList {
+  width: 100%;
+}
+#wList li {
+  width: 1.58rem;
+  height: 2.08rem;
+  border-top: 0.02rem solid #F0F0F0;
+  border-left: 0.02rem solid #F0F0F0;
+  float: left;
+}
+#wList li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#wList li a img {
+  width: 100%;
+  height: 100%;
+}
+/*发现精彩*/
+#discover {
+  width: 100%;
+  height: 3.14rem;
+  background: white;
+  overflow: hidden;
+}
+#discover .title {
+  width: 100%;
+  height: 0.9rem;
+  border-bottom: 0.02rem solid #F0F0F0;
+  position: relative;
+}
+#discover .title .leftS {
+  width: 1.92rem;
+  height: 100%;
+  line-height: 0.9rem;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.32rem;
+  color: #000000;
+}
+#discover .title .centerS {
+  width: 2.48rem;
+  height: 0.52rem;
+  position: absolute;
+  overflow: hidden;
+  left: 1.92rem;
+  top: 0.19rem;
+}
+#discover .title .centerS .gun {
+  width: 100%;
+}
+#discover .title .centerS .gun li {
+  width: 100%;
+  height: 0.52rem;
+}
+#discover .title .centerS .gun li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+#discover .title .centerS .gun li span.up {
+  width: 0.3rem;
+  height: 0.24rem;
+  display: inline-block;
+  background: url(../img/png/double_quotation_left.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0.1rem;
+  top: 0.14rem;
+}
+#discover .title .centerS .gun li span.text {
+  width: 1.7rem;
+  height: 0.52rem;
+  line-height: 0.52rem;
+  display: inline-block;
+  font-size: 0.24rem;
+  color: #999999;
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#discover .title .centerS .gun li span.down {
+  width: 0.3rem;
+  height: 0.24rem;
+  display: inline-block;
+  background: url(../img/png/double_quotation_mark_right.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.14rem;
+}
+#discover .title .rightS {
+  width: 1.6rem;
+  height: 100%;
+  position: absolute;
+  right: 0.3rem;
+  top: 0;
+  overflow: hidden;
+}
+#discover .title .rightS a {
+  width: 100%;
+  height: 0.6rem;
+  margin-top: 0.16rem;
+  display: block;
+  background: url(../img/png/login.png) no-repeat;
+  background-size: 100% 100%;
+}
+#discover .community {
+  width: 100%;
+  height: 2.24rem;
+  position: relative;
+  overflow: hidden;
+}
+#discover .community .cList {
+  width: 6rem;
+  height: 1.84rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -3rem;
+  top: 50%;
+  margin-top: -0.92rem;
+}
+#discover .community .cList li {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+#discover .community .cList li a {
+  width: 1.4rem;
+  height: 100%;
+  display: block;
+  margin: 0 0.1rem;
+  font-size: 0.28rem;
+  color: black;
+  position: relative;
+}
+#discover .community .cList li a img {
+  width: 100%;
+  height: 100%;
+}
+#discover .community .cList li a h3 {
+  width: 100%;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  position: absolute;
+  left: 0;
+  bottom: 0.14rem;
+  text-align: center;
+  color: black;
+}
+/*发现更多精彩*/
+#more {
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+#more .line {
+  height: 0.02rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2.2rem;
+  background: #dcdcdc;
+  width: 4.4rem;
+}
+#more p {
+  width: 2.28rem;
+  height: 0.36rem;
+  background: #f0f0f0;
+  line-height: 0.36rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -1.14rem;
+  top: 50%;
+  margin-top: -0.18rem;
+}
+#more p a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 0.24rem;
+  line-height: 0.36rem;
+  color: #999999;
+  text-indent: 0.64rem;
+  position: relative;
+}
+#more p a span {
+  width: 0.36rem;
+  height: 0.36rem;
+  display: inline-block;
+  background: url(../img/png/more1.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0.2rem;
+  top: 0;
+}
+/*景点*/
+#scenic {
+  width: 100%;
+  height: 2.36rem;
+}
+#aList {
+  width: 100%;
+  height: 0.9rem;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+#aList li {
+  width: 25%;
+  height: 0.84rem;
+  line-height: 0.9rem;
+  text-align: center;
+  float: left;
+}
+#aList li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 0.32rem;
+  color: black;
+}
+#aList li.moveOn a {
+  color: #43c475;
+  border-bottom: 0.06rem solid #43c475;
+}
+#bList {
+  width: 100%;
+  height: 1.46rem;
+  overflow: hidden;
+}
+#bList li {
+  width: 1.58rem;
+  height: 0.72rem;
+  text-align: center;
+  border-top: 0.02rem solid #dddddd;
+  border-right: 0.02rem solid #dddddd;
+  overflow: hidden;
+  float: left;
+}
+#bList li a {
+  width: 1.24rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  display: block;
+  font-size: 0.24rem;
+  color: #666666;
+  margin: 0.11rem 0.17rem;
+}
+#bList li.moveOff a {
+  color: white;
+  background: #43c475;
+  border-radius: 0.24rem;
+  -webkit-border-radius: 0.24rem;
+  -moz-border-radius: 0.24rem;
+}
+
+.shenglue {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.bg_img_mid {
+  position: absolute;
+  top: 50%;
+  margin-top: -240px;
+}
+/*.tr_items {
+  width: 320px;
+  height: 232px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  position: relative;
+}
+.tr_items a {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.tr_items .item_top {
+  width: 640px;
+  height: 300px;
+  position: relative;
+}
+.tr_items .top_img {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+.tr_items .top_img img {
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -240px;
+}
+.tr_items .icon {
+  vertical-align: middle;
+}
+.tr_items .top_ex {
+  padding: 0 30px;
+  border-radius: 24px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 24px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+.tr_items .top_ex .icon-tours {
+  margin-right: 6px;
+  font-size: 32px;
+}
+.tr_items .top_ex .icon-tours:before {
+  content: "\e912";
+}
+.tr_items .top_ex .ex_line {
+  margin: 0 5px;
+}
+.tr_items .top_price {
+  width: 180px;
+  height: 106px;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+.tr_items .top_price .price_now {
+  font-size: 24px;
+  line-height: 60px;
+  color: #fff;
+  background: #ff8800;
+  text-align: center;
+}
+.tr_items .top_price .price_now em {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+}
+.tr_items .top_price .saving {
+  background: #fff;
+  color: #ff8800;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+}
+.tr_items .tr_info {
+  padding: 40px 30px;
+}
+.tr_items .tr_info .info_title {
+  padding-right: 40px;
+  color: #222;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 36px;
+  font-weight: normal;
+}
+.tr_items .tr_info .info_describe {
+  padding-top: 20px;
+  padding-right: 40px;
+  font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #999;
+}*/
