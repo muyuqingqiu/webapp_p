@@ -1,0 +1,136 @@
+@charset "utf-8";
+body {
+  font-family: "Helvetica";
+}
+@font-face {
+  font-family: 'tuniu';
+  src: url('../fonts/tuniu_2.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'tuniu' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.shenglue {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.bg_img_mid {
+  position: absolute;
+  top: 50%;
+  margin-top: -240px;
+}
+.tr_items {
+  width: 640px;
+  height: 464px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  position: relative;
+}
+.tr_items a {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.tr_items .item_top {
+  width: 640px;
+  height: 300px;
+  position: relative;
+}
+.tr_items .top_img {
+  width: 640px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.tr_items .top_img img {
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -240px;
+}
+.tr_items .icon {
+  vertical-align: middle;
+}
+.tr_items .top_ex {
+  padding: 0 30px;
+  border-radius: 24px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 24px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+.tr_items .top_ex .icon-tours {
+  margin-right: 6px;
+  font-size: 32px;
+}
+.tr_items .top_ex .icon-tours:before {
+  content: "\e912";
+}
+.tr_items .top_ex .ex_line {
+  margin: 0 5px;
+}
+.tr_items .top_price {
+  width: 180px;
+  height: 106px;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+.tr_items .top_price .price_now {
+  font-size: 24px;
+  line-height: 60px;
+  color: #fff;
+  background: #ff8800;
+  text-align: center;
+}
+.tr_items .top_price .price_now em {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+}
+.tr_items .top_price .saving {
+  background: #fff;
+  color: #ff8800;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+}
+.tr_items .tr_info {
+  padding: 40px 30px;
+}
+.tr_items .tr_info .info_title {
+  padding-right: 40px;
+  color: #222;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 36px;
+  font-weight: normal;
+}
+.tr_items .tr_info .info_describe {
+  padding-top: 20px;
+  padding-right: 40px;
+  font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #999;
+}

@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+@main_ff:"Helvetica" !important;
+@viewW : 640px;
+@tr_mH : 464px;
+@tr_mrB : 10px;
+@tr_bg : #fff;
+@tr_img_H : 300px;
+@fc_w:#fff;
+@color_or: #f80;
+body{
+    font-family: @main_ff;
+}
+
+
+@font-face {
+    font-family: 'tuniu';
+    src:url('../fonts/tuniu_2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+ 
+    font-family: 'tuniu' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.shenglue{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bg_size(@size:100%){
+     background-size:@size;
+     
+}
+.bg_img_mid{
+    position: absolute;
+    top: 50%;
+    margin-top: -240px;
+}
+.tr_items{
+    
+    width : @viewW;
+    height: @tr_mH;
+    margin-bottom: @tr_mrB;
+    background: @tr_bg;
+    margin-top: 400px;
+    position: relative;
+    a{
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    .item_top{      
+        width : @viewW;
+        height: @tr_img_H;
+        position: relative;     
+    }
+    .top_img{
+        width: @viewW;
+        height: @tr_img_H;
+        overflow: hidden;
+        position: relative;
+        img{
+           .bg_size();
+           .bg_img_mid; 
+        }
+    } 
+    .icon{
+        vertical-align: middle;
+     }
+    .top_ex{
+        padding:0 30px;
+        border-radius:24px;
+        height: 48px;
+        line-height: 48px;
+        font-size : 24px;
+        color: @fc_w;
+        background: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        
+        .icon-tours{
+            margin-right: 6px;
+            font-size:32px; 
+            &:before {
+                 content: "\e912";
+            }         
+        }
+        
+        .ex_line{
+            margin:0 5px;
+        }
+    }  
+    .top_price{
+        width: 180px;
+        height: 106px;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        .price_now{
+            font-size:24px;
+            line-height: 60px;
+            color:#fff;
+            background:@color_or;
+            text-align: center;
+            
+            em{
+                font-size:40px;
+                font-style: normal;
+                font-weight: normal;
+            }
+        }
+        .saving{
+            background:#fff;
+            color: @color_or;
+            font-size: 24px;
+            line-height: 40px;
+            text-align: center;
+        }
+    } 
+    
+    .tr_info{
+        padding: 40px 30px;
+        
+        .info_title{
+            padding-right:40px;
+            color: #222;
+            .shenglue;
+            font-size: 36px;
+            font-weight: normal;
+        }
+        .info_describe{
+            padding-top:20px;
+            padding-right:40px;
+            font-size: 24px;
+            .shenglue;
+            color: #999;
+        }
+    }
+}

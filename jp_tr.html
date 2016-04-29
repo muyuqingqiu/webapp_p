@@ -4,11 +4,12 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="css/jp_tr.css" />
+		<link rel="stylesheet" type="text/css" href="css/tr_m.css"/>
 		<script src="js/jquery-1.12.1.min.js"></script>
 		<script src="js/sea.js"></script>
-		<script src="js/swiper-3.3.1.jquery.min.js"></script>
+		<script src="js/index.js"></script>
+		<script src="js/common.js"></script>
 		<script>
-			seajs.use('jp_tr.js');
 			var scale = 1/window.devicePixelRatio;
 			var viewW = 0;
 			document.write('<meta name="viewport" content="width=device-width,initial-scale=' + scale + ',user-scalable=no" />');
@@ -18,14 +19,7 @@
 	</head>
 		
 	<body>
-		<ul>
-			<li class="tr_items">
-				<div class="tr_img"><img src="img/jpg/tr_img0.jpg" alt="tr0" /></div>
-				<div class="tr_info">
-					<h3></h3>
-					<p></p>
-				</div>
-			</li>
-		</ul>
+		<input type="button" value="close" onclick="back()"/>
 	</body>
 </html>
+

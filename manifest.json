@@ -210,7 +210,27 @@
 					"css/index.css",
 					"js/jquery-1.12.1.min.js",
 					"js/swiper-3.3.1.jquery.min.js",
-					"js/index.js"
+					"js/index.js",
+					"js/cookie.js",
+					"js/geoM.js",
+					"js/tellPhone.js",
+					"js/BarcodeM.js",
+					"js/common.js"
+				],
+				"refer": [
+					"jp_tr.html"
+				],
+				"priority": 0
+			},
+			"jp_tr.html": {
+				"resources": [
+					"css/jp_tr.css",
+					"css/tr_m.css",
+					"js/sea.js",
+					"js/jquery-1.12.1.min.js",
+					"js/swiper-3.3.1.jquery.min.js",
+					"js/index.js",
+					"js/common.js"
 				],
 				"refer": [],
 				"priority": 0

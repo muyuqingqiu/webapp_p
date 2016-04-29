@@ -7,11 +7,16 @@
 		<script src="js/jquery-1.12.1.min.js"></script>
 		<script src="js/sea.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/swiper-3.3.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js"></script>
+		<script>
+			document.addEventListener( "plusready", onPlusReady, false );		
+			function onPlusReady() {				
+				seajs.use('index');
+			}
+		</script>
 	</head>
 	<body>
-		
-		
+	
 		
 	</body>
 </html>
