@@ -11,9 +11,10 @@ function turn(){
 	var $zLi = $('#small li');
 	var $iNow = 0;
 	var $iNow2 = 0;
-	var $timer = null;
+	var timer = null;
 	var $oWidth = $aLi.eq(0).width();
-	$timer = setInterval(function(){
+	
+	timer = setInterval(function(){
 		if($iNow == $aLi.length-1){
 			$aLi.eq(0).css('position','relative');
 			$aLi.eq(0).css('left',$oParent.width()+'px');
@@ -30,7 +31,7 @@ function turn(){
 		$zLi.attr('class','');
 		$iNow2++;
 		$zLi.eq($iNow).attr('class','change');
-		$oParent.animate({left:-$iNow2*$oWidth},500,'linear');
+		$oParent.animate({left:-$iNow2*$oWidth},400,'linear');
 	},2000)
 }
 

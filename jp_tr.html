@@ -4,22 +4,289 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="css/jp_tr.css" />
-		<link rel="stylesheet" type="text/css" href="css/tr_m.css"/>
 		<script src="js/jquery-1.12.1.min.js"></script>
 		<script src="js/sea.js"></script>
-		<script src="js/index.js"></script>
 		<script src="js/common.js"></script>
+		<script src="js/move.js"></script>
 		<script>
 			var scale = 1/window.devicePixelRatio;
 			var viewW = 0;
 			document.write('<meta name="viewport" content="width=device-width,initial-scale=' + scale + ',user-scalable=no" />');
 			viewW = document.documentElement.clientWidth;
-			document.documentElement.style.fontSize = viewW/32 + 'px';
+			document.documentElement.style.fontSize = viewW/32 + 'px';document.addEventListener( "plusready", onPlusReady, false );		
+			function onPlusReady() {				
+				function tell(num){ //传入手机号码
+					var Uri = plus.android.importClass("android.net.Uri");
+					var Intent = plus.android.importClass("android.content.Intent");
+					var number = new Uri.parse('tel:' + num);
+					var callIntent = new Intent(Intent.ACTION_CALL, number);//这步是关键，ACTION_CALL而不是ACTION_DIAL
+					plus.android.runtimeMainActivity().startActivity(callIntent);
+				}
+				$('.icon-telephone').parent().click(function(){
+					tell('10086');
+				})
+			}
+			
 		</script>
 	</head>
 		
 	<body>
-		<input type="button" value="close" onclick="back()"/>
+		<div id="main">
+			<div class="history-opration">
+			   <a class="back" onclick="back()">
+			   	<i class="icon-titleback"></i>
+			   </a>
+			</div>
+			<div class="banner">
+			   <div class="banner-slide">
+			      <ul class="banner-slideul" id="banner-slideul">
+			        <li><img src="img/daban/slide-a.jpg"></li>
+			        <li><img src="img/daban/slide-b.jpg"></li>
+			        <li><img src="img/daban/slide-c.jpg"></li>
+			      </ul>
+			   </div>
+			   <div id="banner-info">
+			   	  <span class="icon-group"></span>
+			   	  <span>跟团游</span>
+			   	  <span class="product-id">产品编号:21100214</span>
+			   </div>
+			</div>
+			<div id="brief-block">
+				<div class="title-ctn">
+				        <div class="title"><日本大阪-京都-富士山-东京5晚6日游>1晚正宗日式温泉 赠送日式自助烤肉 双古都全景任你选 辽宁户籍客人均可报名</div>
+						<div class="satisy-degree">
+							<em>95%</em>
+							                   满意度                                 
+						</div>
+				</div>
+				<div class="price-sale-ctn">
+					 <div class="price-ctn">
+					 	<span class="price-label">促销价</span>
+					 	<span class="money-symbol">￥</span>
+					 	<span class="price">4601</span>
+					 	<span class="money-symbol">起</span>
+					 	<span class="old-price">￥4618</span>
+					 </div>
+				</div>
+			</div>
+			<div id="installment">
+				<div class="image"></div>
+				<div class="desc">
+					<span>￥916.00</span>
+					<span>起￥335.00*11期免息</span>
+				</div>
+				<div class="more"></div>
+			</div>
+			<div class="hc-block saleInfo">
+				<div class="header link-header">
+					<span class="title">优惠信息</span>
+					<ul class="sale-tag-list">
+					   <li>多点优惠</li>
+					   <li>点评返现</li>
+					</ul>
+					<span class="sale-count">2个</span>
+					<div class="more"></div>
+				</div>
+				<div class="header link-header">
+					<span class="title">领券活动</span>
+					<ul class="coupon-tag-list">
+					   <li>2400元券</li>
+					   <li>1000元券</li>
+					   <li>1000元券</li>
+					</ul>
+					<div class="more"></div>
+				</div>
+		  </div>
+		  <div class="hc-block departInfo">
+		  	 <div class="header link-header">
+		  	 	<span class="title">
+		  	 		<i class="icon-chart">
+		  	 			
+		  	 		</i>
+		  	 		出发地和团期
+		  	 	</span>
+		  	 </div>
+		  	 <div class="more"></div>
+		  	 <div class="content">
+		  	 	<div class=depart-content>
+		  	 		<span class="depart-city">出发地：大连  ，</span>
+		  	 		<span class="depart-date">05-12 , 05-18 , 05-22, 05-33...</span>
+		  	 	</div>
+		  	 </div>
+		  </div>
+		  <div class="hc-block comment">
+		  	<div class="header link-header">
+		  	 	<span class="title">
+		  	 		<i class="icon-comment">
+		  	 			
+		  	 		</i>
+		  	 		点评（16）
+		  	 	</span>
+		  	</div>
+		  	<div class="more"></div>
+		  	<div class="content">
+		  		<div class="comment-content">
+		  			<ul>
+		  				<li class="comment-block">
+		  					<div class="comment-brief">
+		  						<i class="icon icon-people"></i>
+		  						<span class="comment-write">Rex刘老根</span>
+		  						<span class="comment-tag">87%</span>
+		  						<span class="comment-date">2014-06-27</span>
+		  					</div>
+		  					<p class="comment-txt">
+		  						  导游很美，安排行程还可以就是特匆忙，每个景点无法完全看全，买东西也是特别匆忙来不及细看，餐饮尚可，住宿还行，温泉酒店有点太旧了，还没WIFI，大部分时间浪费在交通上，总体来说这次日本之行还算不错。，下次还来途牛                            
+		  					</p>
+		  				</li>
+		  			</ul>
+		  		</div>
+		  	</div>
+		  </div>
+		  <div class="links-block seperate-block">
+		  	<ul>
+		  	   <li>
+		  	   	<a href="#">
+		  	   	  <span class="title">
+		  	   	  	<i class="icon-price"></i>
+		  	   	  	费用&预定须知
+		  	   	  </span>
+		  	   	  <div class="more"></div>
+		  	   	</a>
+		  	   </li>
+		  	   <li>
+		  	   	<a href="#">
+		  	   	  <span class="title">
+		  	   	  	<i class="icon-visa"></i>
+		  	   	  	签证信息
+		  	   	  </span>
+		  	   	  <div class="more"></div>
+		  	   	</a>
+		  	   </li>
+		  	   <li>
+		  	   	<a href="#">
+		  	   	  <span class="title">
+		  	   	  	<i class="icon-questions"></i>
+		  	   	  	在线问答(10)
+		  	   	  </span>
+		  	   	  <div class="more"></div>
+		  	   	</a>
+		  	   </li>
+		  	</ul>
+		  </div>
+		  <div class="hc-block">
+		  	<div class="header">
+		  		<span class="title">
+		  			<i class="icon-supper"></i>
+		  			相关产品推荐
+		  		</span>
+		  	</div>
+		  	<div class="content">
+		  		<div class="relatedProduct">
+		  			<ul class="clearfix">
+		  				<li>
+		  					<a>
+		  					  <div class="product-cover">
+		  					  	<img src="img/daban/related-a.jpg">
+		  					  </div>
+		  					  <div class="product-txt">
+		  					  	<h2><日本南北海道赏樱8景-函馆夜景3晚4日>东京往返，2人起订（当地游）</h2>
+		  					  	<span class="product-price">
+		  					  		<span class="money-symbol">￥</span>
+		  					  		4016
+		  					  	</span>
+		  					  </div>
+		  					</a>
+		  				</li>
+		  				<li>
+		  					<a>
+		  					  <div class="product-cover">
+		  					  	<img src="img/daban/related-b.jpg">
+		  					  </div>
+		  					  <div class="product-txt">
+		  					  	<h2><日本全景6日游>南方航空，精心赠送一晚日式温泉</h2>
+		  					  	<span class="product-price">
+		  					  		<span class="money-symbol">￥</span>
+		  					  		4492
+		  					  	</span>
+		  					  </div>
+		  					</a>
+		  				</li>
+		  				<li>
+		  					<a>
+		  					  <div class="product-cover">
+		  					  	<img src="img/daban/related-c.jpg">
+		  					  </div>
+		  					  <div class="product-txt">
+		  					  	<h2><日本东京日本医科大学体检3日游>精致私人定制，全方位检查，全程5星东京湾酒店 VIP专车接送 2人成团，不含飞机签证（当地游）</h2>
+		  					  	<span class="product-price">
+		  					  		<span class="money-symbol">￥</span>
+		  					  		45980
+		  					  	</span>
+		  					  </div>
+		  					</a>
+		  				</li>
+		  				<li>
+		  					<a>
+		  					  <div class="product-cover">
+		  					  	<img src="img/daban/related-d.jpg">
+		  					  </div>
+		  					  <div class="product-txt">
+		  					  	<h2><日本东京5天4晚高端体检游>日本早癌筛查 精密体检 1人成团 含接送机（当地游）</h2>
+		  					  	<span class="product-price">
+		  					  		<span class="money-symbol">￥</span>
+		  					  		40088
+		  					  	</span>
+		  					  </div>
+		  					</a>
+		  				</li>
+		  				<li>
+		  					<a>
+		  					  <div class="product-cover">
+		  					  	<img src="img/daban/related-e.jpg">
+		  					  </div>
+		  					  <div class="product-txt">
+		  					  	<h2><日本东京5天4晚高端体检游>日本早癌筛查 精密体检 1人成团（当地游）</h2>
+		  					  	<span class="product-price">
+		  					  		<span class="money-symbol">￥</span>
+		  					  		29429
+		  					  	</span>
+		  					  </div>
+		  					</a>
+		  				</li>
+		  				<li>
+		  					<a>
+		  					  <div class="product-cover">
+		  					  	<img src="img/daban/related-f.jpg">
+		  					  </div>
+		  					  <div class="product-txt">
+		  					  	<h2><日本高端防癌PET-CT专项体检+3天2晚观光游>癌症早期筛查 日本皇室专用体检中心（当地游）</h2>
+		  					  	<span class="product-price">
+		  					  		<span class="money-symbol">￥</span>
+		  					  		29089
+		  					  	</span>
+		  					  </div>
+		  					</a>
+		  				</li>
+		  			</ul>
+		  		</div>
+		  	</div>
+		  </div>
+		</div>
+		<div class="btn-footer clearfix">
+			<ul class="simple-buttons">
+				<li>
+					<i class="icon-telephone"></i>
+				</li>
+				<li>
+					<i class="icon-start"></i>
+				</li>
+			</ul>
+			<a href="#" class="order-button">
+				<i class="icon-edit"></i>
+				立即预定
+			</a>
+		</div>
+		<script src="js/jp_tr.js"></script>
 	</body>
 </html>
 

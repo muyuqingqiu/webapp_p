@@ -268,11 +268,14 @@
 					"img/png/double_quotation_left.png",
 					"js/all.js",
 					"php/addTr.php",
-					"img/jpg/tr_img0.jpg"
+					"img/jpg/tr_img0.jpg",
+					"js/addTrM.js"
 				],
 				"refer": [
 					"jp_tr.html",
-					"barcode.html"
+					"barcode.html",
+					"login.html",
+					"ChooseCity.html"
 				],
 				"priority": 0
 			},
@@ -284,14 +287,85 @@
 					"js/jquery-1.12.1.min.js",
 					"js/swiper-3.3.1.jquery.min.js",
 					"js/index.js",
-					"js/common.js"
+					"js/common.js",
+					"fonts/tuniu_2.ttf",
+					"img/daban/related-c.jpg",
+					"img/daban/related-b.jpg",
+					"img/daban/related-a.jpg",
+					"img/daban/related-f.jpg",
+					"img/daban/related-d.jpg",
+					"img/daban/installment-a.png",
+					"img/daban/slide-a.jpg",
+					"img/daban/related-e.jpg",
+					"img/daban/slide-c.jpg",
+					"js/move.js",
+					"img/daban/slide-b.jpg",
+					"js/jp_tr.js"
 				],
 				"refer": [],
 				"priority": 0
 			},
 			"barcode.html": {
 				"resources": [
+					"js/common.js",
+					"css/jp_tr.css",
+					"fonts/tuniu_2.ttf",
+					"img/daban/related-c.jpg",
+					"img/daban/related-b.jpg",
+					"js/jp_tr.js",
+					"img/daban/related-a.jpg",
+					"img/daban/related-f.jpg",
+					"img/daban/installment-a.png",
+					"img/daban/related-d.jpg",
+					"img/daban/slide-a.jpg",
+					"img/daban/related-e.jpg",
+					"img/daban/slide-c.jpg",
+					"img/daban/slide-b.jpg",
+					"js/move.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"login.html": {
+				"resources": [
+					"img/png/user.png",
+					"img/jpg/bg.jpg",
+					"img/png/password.png",
+					"img/png/back_icon.png",
+					"js/jquery-1.12.1.min.js",
 					"js/common.js"
+				],
+				"refer": [
+					"newMemb.html"
+				],
+				"priority": 0
+			},
+			"ChooseCity.html": {
+				"resources": [
+					"js/sea.js",
+					"js/cookie.js",
+					"js/common.js",
+					"img/png/arrow_green_left.png",
+					"js/jquery-1.12.1.min.js",
+					"fonts/tuniu_2.ttf",
+					"js/geoM.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"newMemb.html": {
+				"resources": [
+					"css/newNumb.css",
+					"img/png/1461910496.8995",
+					"img/png/captcha.png",
+					"img/png/eye.png",
+					"img/png/tel.png",
+					"img/png/pen.png",
+					"js/index.js",
+					"js/common.js",
+					"js/jquery-1.12.1.min.js",
+					"img/jpg/bg.jpg",
+					"img/png/password.png"
 				],
 				"refer": [],
 				"priority": 0

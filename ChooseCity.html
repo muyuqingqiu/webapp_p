@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>选择城市</title>
+<style>
+	*{ margin: 0; padding: 0;}
+	li{ list-style: none;}
+	img{ display: block; border: none; vertical-align: top;}
+	a{ color: inherit; text-decoration: none;}
+	.dtlist:target{ padding-top: 0.88rem;} 
+	.clear :after{ content: ""; display: block; clear: both;}
+	body{ font-family: "宋体"; font-size: 0.32rem; overflow: hidden;}
+	header{ width: 100%; height: 0.88rem; background: #f4f4f4; border-bottom: #d4d4d4 solid 0.01rem; position: fixed; z-index: 100;}
+	header .left_arrow{ height: 100%; width: 0.16rem; display: inline-block; background: url(img/png/arrow_green_left.png) no-repeat 0 50%; background-size: contain; position: absolute; left: 0.2rem;}
+	header h2{ height: 100%; text-align: center; line-height: 0.88rem; font-size: 0.32rem; font-weight: 100;}
+	@font-face {
+	  font-family: 'tuniu';
+	  src: url(fonts/tuniu_2.ttf);
+	  font-weight: normal;
+	  font-style: normal;
+	}
+	[class^="icon-"], [class*=" icon-"] {
+	    font-family: 'tuniu' !important;
+	    speak: none;
+	    font-style: normal;
+	    font-weight: normal;
+	    font-variant: normal;
+	    text-transform: none;
+	    line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+	#main { width: 100%; padding-top: 0.89rem;}
+	#main .search{ height: 0.92rem; width: 100%; background: #f3f2f5; position: relative; box-sizing: border-box; display: flex; padding: 0.16rem 0.3rem;}
+	#main .search .search_child{ width: 5.8rem; height: 0.6rem; flex: 1; position: relative;}
+	#main .search .search_input{ width: 100%; height: 0.56rem; box-sizing: border-box; border: 1px solid #e8e8e8; padding: 0.12rem 0.56rem 0.12rem 0.64rem; font-size: 0.24rem; color: #bbb; border-radius: 4px; display: inline-block; position: relative; outline:  none; -webkit-appearance: none;}
+	#main .search .icon-search4:before{width: 0.36rem; height: 0.36rem; font-size: 0.36rem; position: absolute; left: 0.22rem; top: 0.12rem; content: "\e916"; color: #999; z-index: 5;}
+	#main .search .icon-delete:before{width: 0.36rem; height: 0.36rem; font-size: 0.36rem; position: absolute; right: 0.1rem; top: 0.12rem; content: "\e60e"; color: #999; z-index: 8; opacity: 0;}
+	#main .search .cancel_search{ line-height: 0.6rem; margin-left: 0.3rem; color: #666; font-size: 0.28rem; display: none; position: relative; top: -0.56rem; float: right; z-index: 9;}
+	/*共用的class*/
+	#city_content{ box-sizing: border-box; width: 100%; padding-top: 0.3rem; font-size: 0.3rem; color: #999;}
+	#city_content .city_list{ box-sizing: border-box; width: 100%; margin: 0.2rem 0.4rem 0 0; padding-left: 0.3rem;} 
+	#city_content .city_list li{ box-sizing: border-box; width: 20%; height: 0.54rem; float: left; margin-right: 0.2rem; margin-bottom: 0.3rem; border: 1px solid #ddd; line-height: 0.54rem; text-align: center; border-radius: 4px;}
+	
+	#city_content .china_word{ padding-left: 0.3rem;}
+	#city_content dl{ padding: 0 0.3rem;}
+	#city_content dt{ width: 100%; line-height: 0.6rem; padding-left: 0.4rem; background-color: #f5f5f5; color: #222; margin-left: -0.3rem;}
+	#city_content dd{line-height: 0.9rem; padding-left: 0.1rem; border-bottom: 1px solid #eee;}
+	/*右侧导航*/
+	#right_nav{ width: 0.6rem; position: fixed; font-size: 0.28rem; font-weight: bold; text-align: center; color: #23cc77; top: 2.5rem; bottom: 0.7rem; right: 0; box-sizing: border-box; display: flex; flex-direction: column;}
+	
+</style>
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/sea.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+
+<body>
+	<header>
+		<span class="left_arrow" onclick="back()"></span>
+		<h2>选择城市</h2>
+	</header>
+	<div id="main" class="clear">
+		<div class="search">
+			<div class="search_child">
+				<i class="search_icon icon-search4"></i>
+				<input class="search_input" type="search" placeholder="南京/nanjing/nj" />
+				<i class="icon-delete"></i>
+				<span class="cancel_search">取消</span>
+			</div>
+		</div>
+		<!--城市列表-->
+		<article id="city_content" class="clear">
+			<div id="position_city_title" class="china_word dtlist">
+				根据您的定位推荐
+			</div>
+			<ul id="position_city_list" class="city_list">
+				<li></li>
+			</ul>
+			<div id="history_city_title" class="china_word dtlist">
+				历史记录
+			</div>
+			<ul class="city_list">
+				<li>大连</li>
+			</ul>
+			<div id="hot_city_title" class="china_word dtlist">
+				热门城市
+			</div>
+			<ul class="city_list">
+				<li>北京</li>
+				<li>南京</li>
+				<li>上海</li>
+				<li>杭州</li>
+				<li>苏州</li>
+				<li>天津</li>
+				<li>深圳</li>
+				<li>无锡</li>
+				<li>成都</li>
+				<li>重庆</li>
+				<li>武汉</li>
+				<li>沈阳</li>
+				<li>广州</li>
+				<li>宁波</li>
+				<li>深圳</li>
+				<li>石家庄</li>
+				
+			</ul>
+			<dl>
+				<dt id="a_city_title">A</dt>
+				<dd>鞍山</dd>
+				<dd>安庆</dd>
+				<dd>安康</dd>
+				<dd>阿里</dd>
+			</dl>
+			<dl>
+				<dt id="b_city_title">B</dt>
+				<dd>北京</dd>
+				<dd>包头</dd>
+				<dd>蚌阜</dd>
+				<dd>保定</dd>
+				<dd>本溪</dd>
+				<dd>宝鸡</dd>
+			</dl>
+			<dl>
+				<dt id="c_city_title">C</dt>
+				<dd>成都</dd>
+				<dd>重庆</dd>
+				<dd>长沙</dd>
+				<dd>长春</dd>
+				<dd>常州</dd>
+				<dd>常德</dd>
+				<dd>滁州</dd>
+				<dd>赤峰</dd>
+				<dd>长治</dd>
+				<dd>沧州</dd>
+				<dd>池州</dd>
+				<dd>承德</dd>
+				<dd>郴州</dd>
+				<dd>朝阳</dd>
+				<dd>常熟</dd>
+			</dl>
+			<dl>
+				<dt id="d_city_title">D</dt>
+				<dd>大连</dd>
+				<dd>大庆</dd>
+				<dd>大同</dd>
+				<dd>东莞</dd>
+				<dd>丹东</dd>
+				<dd>东营</dd>
+				<dd>达州</dd>
+				<dd>德阳</dd>
+				<dd>大理</dd>
+			</dl>
+			<dl>
+				<dt id="e_city_title">E</dt>
+				<dd>鄂尔多斯</dd>
+				<dd>恩施</dd>
+			</dl>
+			<dl>
+				<dt id="f_city_title">F</dt>
+				<dd>福州</dd>
+				<dd>佛山</dd>
+				<dd>阜阳</dd>
+				<dd>抚顺</dd>
+				<dd>阜新</dd>
+			</dl>
+			<dl>
+				<dt id="g_city_title">G</dt>
+				<dd>广州</dd>
+				<dd>贵阳</dd>
+				<dd>桂林</dd>
+				<dd>赣州</dd>
+				<dd>广元</dd>
+			</dl>
+			<dl>
+				<dt id="h_city_title">H</dt>
+				<dd>杭州</dd>
+				<dd>合肥</dd>
+				<dd>海口</dd>
+				<dd>哈尔滨</dd>
+				<dd>呼和浩特</dd>
+				<dd>惠州</dd>
+				<dd>衡阳</dd>
+				<dd>淮南</dd>
+				<dd>淮安</dd>
+				<dd>湖州</dd>
+				<dd>黄山</dd>
+				<dd>邯郸</dd>
+				<dd>菏泽</dd>
+				<dd>汉中</dd>
+				<dd>黄冈</dd>
+				<dd>黄石</dd>
+				<dd>怀化</dd>
+				<dd>葫芦岛</dd>
+			</dl>
+			<dl>
+				<dt id="j_city_title">J</dt>
+				<dd>济南</dd>
+				<dd>金华</dd>
+				<dd>吉林</dd>
+				<dd>锦州</dd>
+				<dd>嘉兴</dd>
+				<dd>江门</dd>
+				<dd>揭阳</dd>
+				<dd>九江</dd>
+				<dd>济宁</dd>
+				<dd>晋城</dd>
+				<dd>焦作</dd>
+				<dd>荆州</dd>
+				<dd>景德镇</dd>
+				<dd>佳木斯</dd>
+				<dd>江阴</dd>
+			</dl>
+			<dl>
+				<dt id="k_city_title">K</dt>
+				<dd>昆明</dd>
+			</dl>
+			<dl>
+				<dt id="l_city_title">L</dt>
+				<dd>洛阳</dd>
+				<dd>兰州</dd>
+				<dd>柳州</dd>
+				<dd>六盘水</dd>
+				<dd>丽江</dd>
+				<dd>辽阳</dd>
+				<dd>吕梁</dd>
+				<dd>临沂</dd>
+				<dd>龙岩</dd>
+				<dd>聊城</dd>
+				<dd>丽水</dd>
+				<dd>临汾</dd>
+				<dd>泸州</dd>
+				<dd>乐山</dd>
+			</dl>
+			<dl>
+				<dt id="m_city_title">M</dt>
+				<dd>绵阳</dd>
+				<dd>牡丹江</dd>
+				<dd>马鞍山</dd>
+				<dd>梅州</dd>
+				<dd>满洲里市</dd>
+			</dl>
+			<dl>
+				<dt id="n_city_title">N</dt>
+				<dd>南京</dd>
+				<dd>宁波</dd>
+				<dd>南宁</dd>
+				<dd>南昌</dd>
+				<dd>南阳</dd>
+				<dd>南通</dd>
+				<dd>宁德</dd>
+				<dd>南充</dd>
+			</dl>
+			<dl>
+				<dt id="p_city_title">P</dt>
+				<dd>盘锦</dd>
+				<dd>平顶山</dd>
+				<dd>莆田</dd>
+				<dd>攀枝花</dd>
+			</dl>
+			<dl>
+				<dt id="q_city_title">Q</dt>
+				<dd>泉州</dd>
+				<dd>青岛</dd>
+				<dd>齐齐哈尔</dd>
+				<dd>秦皇岛</dd>
+				<dd>衢州</dd>
+				<dd>曲靖</dd>
+				<dd>钦州</dd>
+				<dd>庆阳</dd>
+			</dl>
+			<dl>
+				<dt id="r_city_title">R</dt>
+				<dd>日照</dd>
+			</dl>
+			<dl>
+				<dt id="s_city_title">S</dt>
+				<dd>上海</dd>
+				<dd>苏州</dd>
+				<dd>深圳</dd>
+				<dd>沈阳</dd>
+				<dd>三亚</dd>
+				<dd>石家庄</dd>
+				<dd>绍兴</dd>
+				<dd>松原</dd>
+				<dd>汕头</dd>
+				<dd>四平</dd>
+				<dd>韶关</dd>
+				<dd>商丘</dd>
+				<dd>上饶</dd>
+				<dd>随州</dd>
+				<dd>昭通</dd>
+			</dl>
+			<dl>
+				<dt id="t_city_title">T</dt>
+				<dd>天津</dd>
+				<dd>太原</dd>
+				<dd>唐山</dd>
+				<dd>台州</dd>
+				<dd>通辽</dd>
+				<dd>泰州</dd>
+				<dd>泰安</dd>
+				<dd>通话</dd>
+				<dd>天水</dd>
+			</dl>
+			<dl>
+				<dt id="w_city_title">W</dt>
+				<dd>武汉</dd>
+				<dd>无锡</dd>
+				<dd>温州</dd>
+				<dd>芜湖</dd>
+				<dd>梧州</dd>
+				<dd>乌鲁木齐</dd>
+				<dd>潍坊</dd>
+				<dd>威海</dd>
+				<dd>淮南</dd>
+			</dl>
+			<dl>
+				<dt id="x_city_title">X</dt>
+				<dd>西安</dd>
+				<dd>厦门</dd>
+				<dd>襄阳</dd>
+				<dd>徐州</dd>
+				<dd>新乡</dd>
+				<dd>西双版纳</dd>
+				<dd>许昌</dd>
+				<dd>湘潭</dd>
+				<dd>西宁</dd>
+				<dd>孝感</dd>
+				<dd>西昌市</dd>
+			</dl>
+			<dl>
+				<dt id="y_city_title">Y</dt>
+				<dd>延安</dd>
+				<dd>宜昌</dd>
+				<dd>运城</dd>
+				<dd>扬州</dd>
+				<dd>营口</dd>
+				<dd>银川</dd>
+				<dd>盐城</dd>
+				<dd>榆林</dd>
+				<dd>岳阳</dd>
+				<dd>玉林</dd>
+				<dd>烟台</dd>
+				<dd>宜宾</dd>
+				<dd>宜春</dd>
+				<dd>永州</dd>
+				<dd>延吉市</dd>
+			</dl>
+			<dl>
+				<dt id="z_city_title">Z</dt>
+				<dd>郑州</dd>
+				<dd>遵义</dd>
+				<dd>张家界</dd>
+				<dd>珠海</dd>
+				<dd>珠海</dd>
+				<dd>中山</dd>
+				<dd>漳州</dd>
+				<dd>株洲</dd>
+				<dd>张家口</dd>
+				<dd>湛江</dd>
+				<dd>淄博</dd>
+				<dd>镇江</dd>
+				<dd>舟山</dd>
+				<dd>枣庄</dd>
+				<dd>张掖</dd>
+				<dd>中卫</dd>
+			</dl>
+			
+			
+			
+			<ul id="right_nav">
+				<li><a href="#position_city_title">定位</a></li>
+				<li><a href="#history_city_title">历史</a></li>
+				<li><a href="#hot_city_title">热门</a></li>
+				<li><a href="#a_city_title">A</a></li>
+				<li><a href="#b_city_title">B</a></li>
+				<li><a href="#c_city_title">C</a></li>
+				<li><a href="#d_city_title">D</a></li>
+				<li><a href="#e_city_title">E</a></li>
+				<li><a href="#f_city_title">F</a></li>
+				<li><a href="#g_city_title">G</a></li>
+				<li><a href="#h_city_title">H</a></li>
+				<li><a href="#j_city_title">J</a></li>
+				<li><a href="#k_city_title">K</a></li>
+				<li><a href="#l_city_title">L</a></li>
+				<li><a href="#m_city_title">M</a></li>
+				<li><a href="#n_city_title">N</a></li>
+				<li><a href="#p_city_title">P</a></li>
+				<li><a href="#q_city_title">Q</a></li>
+				<li><a href="#r_city_title">R</a></li>
+				<li><a href="#s_city_title">S</a></li>
+				<li><a href="#t_city_title">T</a></li>
+				<li><a href="#w_city_title">W</a></li>
+				<li><a href="#x_city_title">X</a></li>
+				<li><a href="#y_city_title">Y</a></li>
+				<li><a href="#z_city_title">Z</a></li>
+			</ul>
+		</article>
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script>
+		change();
+		setMaodian ();
+		clickSearch ();
+		backhome ();
+		
+//		点击返回
+		function backhome () {
+			$('header .left_arrow').on('click',function(){
+				history.back()
+			})
+		};
+		
+		
+//		设置锚点定位
+		function setMaodian () {
+			$('#right_nav a').on('click',function(){
+				setTimeout(function(){
+					$('#city_content dt').addClass('dtlist')
+				},10)
+					
+			})
+			$(document).on('scroll',function(){
+				$('#city_content dt').removeClass('dtlist')
+			})
+		};
+		
+//		搜索框的点击事件
+		function clickSearch () {
+			$('.search_input').on('focus',function(){
+				$('#city_content').hide();
+				$('.search_child').css('width',5.8*0.85+'rem');
+				$('.search_input').css('width','85%');
+				$('.cancel_search').show().css('opacity','1');
+			})
+			$('.cancel_search').on('click',function(){
+				$(this).hide().css('opacity',0);
+				$('#city_content').show();
+				$('.search_child').css('width','5.8rem');
+				$('.search_input').css('width','100%');
+			})
+		};
+		
+//		获取地理位置
+		document.addEventListener( "plusready", onPlusReady, false );		
+		function onPlusReady() {				
+			seajs.use('geoM');
+		};
+		
+		
+		function change(){//通过获取像素比和视口宽来设置 缩放比例和html的font-size的值
+			var i = 1/window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,initial-scale='+i+',minimum-scale='+i+',maximum-scale='+i+',user-scalable=no">');
+			var iWidth = document.documentElement.clientWidth;
+			document.getElementsByTagName('html')[0].style.fontSize = iWidth/6.4 +'px';
+		}
+	</script>
+</body>
+</html>

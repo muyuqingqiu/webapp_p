@@ -1,16 +1,6 @@
 {
 	"index.html": {
 		"resources": [
-			"js/sea.js",
-			"css/index.css",
-			"js/jquery-1.12.1.min.js",
-			"js/swiper-3.3.1.jquery.min.js",
-			"js/index.js",
-			"js/cookie.js",
-			"js/geoM.js",
-			"js/tellPhone.js",
-			"js/BarcodeM.js",
-			"js/common.js",
 			"img/png/more1.png",
 			"img/png/show6.png",
 			"img/png/show8.png",
@@ -19,7 +9,9 @@
 			"img/jpg/show4.png",
 			"img/png/service3.png",
 			"img/png/search_icon.png",
+			"js/common.js",
 			"img/png/nav9.png",
+			"js/jquery-1.12.1.min.js",
 			"img/png/noticeRight.png",
 			"img/png/icon_niuxin.png",
 			"img/png/gift.png",
@@ -34,9 +26,12 @@
 			"img/png/double_quotation_mark_right.png",
 			"img/jpg/turnPic4.jpeg",
 			"img/jpg/show3.png",
+			"js/all.js",
+			"js/index.js",
 			"img/png/login.png",
 			"img/png/nav1.png",
 			"img/png/nav7.png",
+			"js/sea.js",
 			"img/jpg/turnPic1.jpeg",
 			"img/png/cList4.jpeg",
 			"img/png/tList3.png",
@@ -46,6 +41,7 @@
 			"img/png/tList5.png",
 			"img/jpg/show1.png",
 			"img/png/nav4.png",
+			"css/index.css",
 			"img/png/nav2.png",
 			"img/png/show7.png",
 			"img/png/tList4.png",
@@ -58,32 +54,82 @@
 			"img/png/cList3.jpeg",
 			"img/png/tList1.png",
 			"img/png/cList2.jpeg",
+			"js/addTrM.js",
 			"img/png/service.png",
 			"img/png/nav5.png",
-			"img/png/double_quotation_left.png",
-			"js/all.js",
-			"php/addTr.php",
-			"img/jpg/tr_img0.jpg"
+			"img/png/double_quotation_left.png"
 		],
 		"refer": [
 			"jp_tr.html",
-			"barcode.html"
+			"barcode.html",
+			"login.html",
+			"ChooseCity.html"
 		]
 	},
 	"jp_tr.html": {
 		"resources": [
 			"css/jp_tr.css",
-			"css/tr_m.css",
 			"js/sea.js",
+			"css/tr_m.css",
+			"fonts/tuniu_2.ttf",
+			"img/daban/related-c.jpg",
+			"img/daban/related-b.jpg",
+			"img/daban/related-a.jpg",
+			"img/daban/related-f.jpg",
+			"img/daban/related-d.jpg",
+			"img/daban/installment-a.png",
+			"js/common.js",
 			"js/jquery-1.12.1.min.js",
-			"js/swiper-3.3.1.jquery.min.js",
-			"js/index.js",
-			"js/common.js"
+			"img/daban/slide-a.jpg",
+			"img/daban/related-e.jpg",
+			"img/daban/slide-c.jpg",
+			"js/move.js",
+			"img/daban/slide-b.jpg",
+			"js/jp_tr.js"
 		]
 	},
 	"barcode.html": {
 		"resources": [
 			"js/common.js"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"img/png/user.png",
+			"img/jpg/bg.jpg",
+			"img/png/password.png",
+			"img/png/back_icon.png",
+			"js/jquery-1.12.1.min.js",
+			"js/common.js"
+		],
+		"refer": [
+			"newMemb.html"
+		]
+	},
+	"ChooseCity.html": {
+		"resources": [
+			"js/sea.js",
+			"js/cookie.js",
+			"js/common.js",
+			"img/png/arrow_green_left.png",
+			"js/jquery-1.12.1.min.js",
+			"fonts/tuniu_2.ttf",
+			"js/geoM.js"
+		]
+	},
+	"newMemb.html": {
+		"resources": [
+			"css/newNumb.css",
+			"img/png/1461910496.8995",
+			"img/png/captcha.png",
+			"img/png/eye.png",
+			"img/png/tel.png",
+			"img/png/pen.png",
+			"js/index.js",
+			"js/common.js",
+			"js/jquery-1.12.1.min.js",
+			"img/jpg/bg.jpg",
+			"img/png/password.png"
 		]
 	}
 }

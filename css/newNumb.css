@@ -1,0 +1,272 @@
+@charset "utf-8";
+/*通配*/
+* {
+  padding: 0;
+  margin: 0;
+}
+img {
+  border: none;
+  vertical-align: top;
+}
+body {
+  font-size: 16px;
+}
+
+.icon{
+	background-size:100%;
+}
+/*less变量*/
+.pr {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+.pf {
+  position: fixed;
+}
+.of {
+  overflow: hidden;
+}
+/*主要内容*/
+#main {
+  width: 100%;
+  height: 11.36rem;
+  background: url(../img/jpg/bg.jpg) no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+#tips {
+  width: 5.6rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  margin: 0.1rem 0.4rem;
+  color: white;
+  text-align: center;
+  border-radius: 0.08rem;
+  -webkit-border-radius: 0.08rem;
+  -moz-border-radius: 0.08rem;
+}
+#title {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.38rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+#title a {
+  display: inline-block;
+  width: 0.26rem;
+  height: 0.26rem;
+  border-top: 0.03rem solid #666;
+  border-left: 0.03rem solid #666;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 0.4rem;
+  top: 50%;
+  margin-top: -0.15rem;
+}
+#content {
+  width: 5.6rem;
+  height: 4.95rem;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 0 20px;
+  overflow: hidden;
+  border-radius: 0.08rem;
+  -webkit-border-radius: 0.08rem;
+  -moz-border-radius: 0.08rem;
+}
+#content .number {
+  width: 5.2rem;
+  height: 1.24rem;
+  border-bottom: 1px solid #d4d4d4;
+  position: relative;
+  overflow: hidden;
+}
+#content .number .icon {
+  width: 0.44rem;
+  height: 0.44rem;
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-top: 0.4rem;
+  background: url(../img/png/tel.png) no-repeat;
+}
+#content .number input {
+  width: 4.4rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-size: 0.3rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0);
+  color: #999;
+  border: none;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  margin-top: -0.24rem;
+}
+#content .verify {
+  width: 5.2rem;
+  height: 1.24rem;
+  border-bottom: 1px solid #d4d4d4;
+  position: relative;
+  overflow: hidden;
+}
+#content .verify .icon {
+  width: 0.44rem;
+  height: 0.44rem;
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-top: 0.4rem;
+  background: url(../img/png/captcha.png) no-repeat;
+}
+#content .verify input {
+  width: 3.3rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-size: 0.32rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0);
+  color: #999;
+  border: none;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  margin-top: -0.24rem;
+}
+#content .verify .plus {
+  width: 1.05rem;
+  height: 0.38rem;
+  display: block;
+  position: absolute;
+  right: 0.1rem;
+  top: 50%;
+  margin-top: -0.24rem;
+}
+#content .verify .plus img {
+  width: 100%;
+  height: 100%;
+}
+#content .get {
+  width: 5.2rem;
+  height: 1.24rem;
+  border-bottom: 1px solid #d4d4d4;
+  position: relative;
+  overflow: hidden;
+}
+#content .get .icon {
+  width: 0.44rem;
+  height: 0.44rem;
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-top: 0.4rem;
+  background: url(../img/png/pen.png) no-repeat;
+}
+#content .get input {
+  width: 3.3rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-size: 0.32rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0);
+  color: #999;
+  border: none;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  margin-top: -0.24rem;
+}
+#content .get .plus {
+  width: 1.92rem;
+  height: 1.26rem;
+  display: block;
+  position: absolute;
+  right: 0rem;
+  top: 0;
+  text-align: center;
+  line-height: 1.26rem;
+}
+#content .get .plus a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  font-size: 0.28rem;
+  color: #43C475;
+  font-weight: bold;
+}
+#content .password {
+  width: 5.2rem;
+  height: 1.24rem;
+  border-bottom: 1px solid #d4d4d4;
+  position: relative;
+  overflow: hidden;
+}
+#content .password .icon {
+  width: 0.44rem;
+  height: 0.44rem;
+  display: inline-block;
+  margin-left: 0.4rem;
+  margin-top: 0.4rem;
+  background: url(../img/png/password.png) no-repeat;
+}
+#content .password input {
+  width: 4.2rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-size: 0.32rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0);
+  color: #999;
+  border: none;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  margin-top: -0.24rem;
+}
+#content .password .plus {
+  width: 0.5rem;
+  height: 0.32rem;
+  display: block;
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  margin-top: -0.14rem;
+}
+#content .password .plus img {
+  width: 100%;
+  height: 100%;
+}
+#invite {
+  width: 5.6rem;
+  height: 0.42rem;
+  text-align: center;
+  margin: 0.5rem 0.4rem;
+}
+#invite a {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 0.32rem;
+  font-weight: bold;
+}
+#btn {
+  width: 5.6rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  color: white;
+  font-size: 0.32rem;
+  border-radius: 0.08rem;
+  -webkit-border-radius: 0.08rem;
+  -moz-border-radius: 0.08rem;
+  background: #ff7800;
+  margin: 0 0.4rem;
+}
