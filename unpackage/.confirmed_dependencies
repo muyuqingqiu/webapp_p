@@ -1,11 +1,11 @@
 {
-	"index.html": {
-		"resources": [
-			"js/sea.js",
-			"css/index.css",
-			"js/jquery-1.12.1.min.js",
-			"js/swiper-3.3.1.jquery.min.js",
-			"js/index.js"
-		]
-	}
+  "index.html": {
+    "resources": [
+      "js/sea.js",
+      "css/index.css",
+      "js/jquery-1.12.1.min.js",
+      "js/swiper-3.3.1.jquery.min.js",
+      "js/index.js"
+    ]
+  }
 }

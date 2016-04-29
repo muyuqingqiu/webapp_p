@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/jp_tr.css" />
+		<script src="js/jquery-1.12.1.min.js"></script>
+		<script src="js/sea.js"></script>
+		<script src="js/swiper-3.3.1.jquery.min.js"></script>
+		<script>
+			seajs.use('jp_tr.js');
+			var scale = 1/window.devicePixelRatio;
+			var viewW = 0;
+			document.write('<meta name="viewport" content="width=device-width,initial-scale=' + scale + ',user-scalable=no" />');
+			viewW = document.documentElement.clientWidth;
+			document.documentElement.style.fontSize = viewW/32 + 'px';
+		</script>
+	</head>
+		
+	<body>
+		<ul>
+			<li class="tr_items">
+				<div class="tr_img"><img src="img/jpg/tr_img0.jpg" alt="tr0" /></div>
+				<div class="tr_info">
+					<h3></h3>
+					<p></p>
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>

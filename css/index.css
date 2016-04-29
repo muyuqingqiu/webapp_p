@@ -1,4 +1,5 @@
 @charset "utf-8";
+<<<<<<< HEAD
 /*通配*/
 * {
   padding: 0;
@@ -697,3 +698,5 @@ h3 {
   -webkit-border-radius: 0.24rem;
   -moz-border-radius: 0.24rem;
 }
+=======
+>>>>>>> origin/master

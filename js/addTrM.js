@@ -1,3 +1,4 @@
+
 define(function(require,exports,module){
 	function postAjax(id,num,iNow){
 		if(!iNow){
@@ -45,3 +46,4 @@ define(function(require,exports,module){
 	exports.addTr = addTr;
 	exports.postAjax = postAjax;
 });
+
