@@ -1,11 +1,25 @@
 {
-  "index.html": {
-    "resources": [
-      "js/sea.js",
-      "css/index.css",
-      "js/jquery-1.12.1.min.js",
-      "js/swiper-3.3.1.jquery.min.js",
-      "js/index.js"
-    ]
-  }
+	"index.html": {
+		"resources": [
+			"js/sea.js",
+			"css/index.css",
+			"js/jquery-1.12.1.min.js",
+			"js/swiper-3.3.1.jquery.min.js",
+			"js/index.js",
+			"css/jp_tr.css",
+			"fonts/tuniu_2.ttf",
+			"img/daban/related-c.jpg",
+			"img/daban/related-b.jpg",
+			"js/jp_tr.js",
+			"img/daban/related-a.jpg",
+			"img/daban/related-f.jpg",
+			"img/daban/installment-a.png",
+			"img/daban/related-d.jpg",
+			"img/daban/slide-a.jpg",
+			"img/daban/related-e.jpg",
+			"img/daban/slide-c.jpg",
+			"img/daban/slide-b.jpg",
+			"js/move.js"
+		]
+	}
 }
